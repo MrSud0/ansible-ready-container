@@ -1,0 +1,15 @@
+# docker-compose.yml
+
+version: '3'
+
+services:
+  ansible_target:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: ansible_target
+    ports:
+      - "2222:22"
+    environment:
+      - USER=ansible
+      - PASS=ansible
